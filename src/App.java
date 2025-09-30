@@ -3,6 +3,12 @@ import java.util.Scanner;
 public class App {
     // CLASS VARIABLE
     private static Monster[] monsters;
+    // PLAYER STATS
+    private static int health = 100;
+    private static int speed = 10;
+    private static int shield = 50;
+    private static int damage = 50;
+    private static int heal = 50;
     public static void main(String[] args) throws Exception {
         System.out.println("----- MONSTER BATTLE -----");
         Scanner input = new Scanner(System.in);
@@ -13,16 +19,61 @@ public class App {
         for(int i = 0; i < monsters.length; i++){
             monsters[i] = new Monster(); // TODO: add some specials
         }
-        // HOW MANY MONSTERS HAVE MORE THAN 50 HEALTH?
-        System.out.println(monsterCount(50) + " monsters have more than 50 health");
 
-        // WHAT IS THE % OF DEFEATED MONSTERS?
-        System.out.println("You have defeated " + percentComplete() + "% of the monsters");
+        //PICK YOUR BUILD
+        System.out.println("---- OPTIONS ----");
+            System.out.println("1) Fighter");
+            System.out.println("2) Tank");
+            System.out.println("3) Healer");
+            System.out.println("4) Ninja");
+            System.out.print("Choice: ");
+             // ACTIONS
+            if(choice == 1) {
+                // fighters have low healing and little shield
+            
+            }else if(choice == 2){
 
+            }else if(choice == 3){
+
+            }else {
+
+            }
         // Display Monster Status
         reportMonsters();
     }
     
+        // Display momnster status
+        while(monsterCount(0) > 0){
+            // Who goes first
+
+            //give options
+            System.out.println("---- OPTIONS ----");
+            System.out.println("1) Attack");
+            System.out.println("2) Defend");
+            System.out.println("3) Heal");
+            System.out.println("4) pass");
+            System.out.print("Choice: ");
+            int choice = input.nextInt(); // TODO: Error handle on bad input
+
+                // ACTIONS
+            if(choice == 1) {
+            
+            }else if(choice == 2){
+
+            }else if(choice == 3){
+
+            }else {
+
+            }
+
+            //DO I NEED A NEW MONSTER?
+            if(currentMonster.health() <= 0){
+                System.out.println(" YOU HAVEW SLAIN A MONSTER!!!!");
+                currentMonster = getNextMonster();
+                reportMonsters();
+            }
+
+    }
     public static double percentComplete(){
             return 100 - monsterCount(0) / monsters.length * 100;
     }

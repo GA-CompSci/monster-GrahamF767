@@ -28,5 +28,11 @@ public class Monster {
         public int speed () { return this.speed; }
         public String special() { return this.special; 
         
+            // MUITATOR METHODS
+            public void takeDamage(){
+
+            }
+
+            
         }
 }
