@@ -28,6 +28,7 @@ public class App {
             System.out.println("4) Ninja");
             System.out.print("Choice: ");
              // ACTIONS
+            int choice;
             if(choice == 1) {
                 // fighters have low healing and little shield
             
@@ -43,7 +44,7 @@ public class App {
     }
     
         // Display momnster status
-        while(monsterCount(0) > 0){
+        while(monsterCount > 0){
             // Who goes first
 
             //give options
@@ -53,6 +54,7 @@ public class App {
             System.out.println("3) Heal");
             System.out.println("4) pass");
             System.out.print("Choice: ");
+            Scanner input;
             int choice = input.nextInt(); // TODO: Error handle on bad input
 
                 // ACTIONS
@@ -66,15 +68,16 @@ public class App {
 
             }
 
+            Monster currentMonster;
             //DO I NEED A NEW MONSTER?
             if(currentMonster.health() <= 0){
-                System.out.println(" YOU HAVEW SLAIN A MONSTER!!!!");
+                System.out.println(" YOU HAVE SLAIN A MONSTER!!!!");
                 currentMonster = getNextMonster();
                 reportMonsters();
             }
 
     }
-    public static double percentComplete(){
+    public static int percentComplete(){
             return 100 - monsterCount(0) / monsters.length * 100;
     }
 
