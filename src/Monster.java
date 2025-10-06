@@ -4,11 +4,11 @@ public class Monster {
     private double damage;
     private int speed;
     private String special;
-    
+
     // CONSTRUCTOR
     public Monster(){
         //randomly generate health, damage, speed
-        health = (int)(Math.random() * 80 + 1) + 20;
+        health = (int)(Math.random() * 80 + 1) + 20; // 21..100
         // random 10-50
         damage = (Math.random() * 41) + 10;
         // speed: random 1-10
@@ -16,23 +16,24 @@ public class Monster {
         // by default the monster doesn't have a special move
         special = "";
     }
+
     // OVERLOADED CONSTRUCTOR
     public Monster(String special){
         this();
         this.special = special;
     }
 
-        // ACCESSOR METHODS
-        public int health() { return health; }
-        public double damage() { return Math.round(damage * 100.0) /100.0; }
-        public int speed () { return this.speed; }
-        public String special() { return this.special; 
-        
-            // MUITATOR METHODS
-            public void takeDamage(){
+    // ACCESSOR METHODS
+    public int health() { return this.health; }
+    public double damage() { return Math.round(this.damage * 100.0) / 100.0; }
+    public int speed () { return this.speed; }
+    public String special() { return this.special; }
 
-            }
+    // MUTATOR METHODS
+    public void takeDamage(int dmg){
+        health -= dmg;
+    }
 
-            
-        }
+    public void setSpecial(String special){ this.special = special; }
+
 }

@@ -14,7 +14,5 @@ public class Weapon {
     public String getName(){
         return this.name;
     }
-
-    public String getName() { return this.name; }
-    public int getDamage() { return this.name; }
+    public int getDamage() { return this.damage; }
 }
