@@ -32,6 +32,7 @@ public class Monster {
     // MUTATOR METHODS
     public void takeDamage(int dmg){
         health -= dmg;
+        System.out.println("Monster took " + dmg + " damage. Health: " + health);
     }
 
     public void setSpecial(String special){ this.special = special; }
