@@ -71,6 +71,7 @@ public class App {
                     health -= 10;
                 } else
                     current.takeDamage(dmg);
+                    System.out.println("You hit the monster for " + dmg + " damage!");
 
                 // SHIELD
             } else if (action == 2) {
@@ -119,7 +120,9 @@ public class App {
                         incomingDamage = 0;
                     System.out.println("CLANG! Your shield absorbed " + shield + " damage.");
                 }
+
                 health -= incomingDamage;
+                System.out.println("OOF! You took " + incomingDamage + " damage. Health: " + health);
             }
 
             // Is our player defeated?
